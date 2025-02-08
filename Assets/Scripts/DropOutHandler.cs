@@ -11,19 +11,14 @@ public class DropOutHandler : MonoBehaviour
         Debug.Log("Component added");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Ball")
         {
             Destroy(other.gameObject);
-            Player.Singelton.SubstractLife();
-
+            Lifes.Singleton.SubstractLife();
         }
     }
+    
+    
 }
